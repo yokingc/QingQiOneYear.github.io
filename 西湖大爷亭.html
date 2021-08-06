@@ -11,6 +11,33 @@
 </head>
 
 <body class="is-loading">
+    <audio controls="controls" autoplay="play" controls="controls" id="audio">
+        <source src="music/music.mp3" type="audio/mp3" id="music">
+        <!-- <source src="file/tears.mp3" type="audio/ogg"> -->
+        <embed height="50px" width="100px" src="music/music.mp3">
+    </audio>
+
+    <script>
+        var soundBgm = document.getElementById("music");
+        //判断本地是否有存储过音频播放时间
+        if (sessionStorage.bgmTime == null) {
+            //若没有时，从头自动播放
+            soundBgm.currentTime = 0;
+        } else {
+            //若有存储的则，取出本地存储的音频播放的暂停时间
+            var curTime = window.sessionStorage.getItem("bgmTime");
+            sessionStorage.bgmPlay = soundBgm.bgmPlay;
+            //从暂停时间开始接着播放
+            soundBgm.currentTime += curTime;
+        }
+        //页面跳转时将本页面音频最后截至时间存储下来
+        function fun() {
+            soundBgm.pause();
+            sessionStorage.bgmPlay = soundBgm.bgmPlay;
+            sessionStorage.bgmTime = soundBgm.bgmPlay ? soundBgm.currentTime + soundBgm.context.currentTime - soundBgm.startTime : soundBgm.currentTime;
+            location.href = '西湖大爷亭.html';
+        }
+    </script>
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -45,7 +72,11 @@
                     <h1>西湖大爷亭</h1>
                     <p>“晚上我可以来找你吃饭么？” “当然可以！”<br /> 八月十日晚，你第一次来五山找我，留下了我们第一张的合影。<br /> </p>
                 </header>
-                <div class="image pics"><img src="images/西湖/pic1.jpg" alt="" /></div>
+                <div style="text-align: center;">
+                    <div class="image main" style="max-width: 450px;display: inline-block;">
+                        <img src="images/西湖/pic1.jpg" alt="" />
+                    </div>
+                </div>
                 <p>八月九日，我们第一次在地铁站见面。我比你早到十分钟，在出口扶梯的位置等你。我记得人群中蹿出了一个高挑的女子，她左右眺望又似乎故作镇定。我看见你穿着碎花的短袖和牛仔裤，一瞬间和你四目相对，我想多看看你，也想逗逗你，就移开了眼神。然后你就左摇右摆的走了过来，说出了那句我一辈子都忘不了的话：
                 </p>
                 <p>“你是谢友晋吧？”</p>

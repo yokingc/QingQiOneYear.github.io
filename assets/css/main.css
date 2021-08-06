@@ -2402,7 +2402,8 @@ input[type="radio"]:focus+label:before {
     width: 100%;
 }
 
-.image.pics {
+
+/* .image.pics {
     display: flex;
     justify-content: center;
     margin: 4rem 0;
@@ -2412,7 +2413,7 @@ input[type="radio"]:focus+label:before {
 .image.pics img {
     width: 100%;
     max-width: 450px;
-}
+} */
 
 @media screen and (max-width: 736px) {
     .image.fit {
