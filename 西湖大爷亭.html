@@ -11,33 +11,7 @@
 </head>
 
 <body class="is-loading">
-    <audio controls="controls" autoplay="play" controls="controls" id="audio">
-        <source src="music/music.mp3" type="audio/mp3" id="music">
-        <!-- <source src="file/tears.mp3" type="audio/ogg"> -->
-        <embed height="50px" width="100px" src="music/music.mp3">
-    </audio>
 
-    <script>
-        var soundBgm = document.getElementById("music");
-        //判断本地是否有存储过音频播放时间
-        if (sessionStorage.bgmTime == null) {
-            //若没有时，从头自动播放
-            soundBgm.currentTime = 0;
-        } else {
-            //若有存储的则，取出本地存储的音频播放的暂停时间
-            var curTime = window.sessionStorage.getItem("bgmTime");
-            sessionStorage.bgmPlay = soundBgm.bgmPlay;
-            //从暂停时间开始接着播放
-            soundBgm.currentTime += curTime;
-        }
-        //页面跳转时将本页面音频最后截至时间存储下来
-        function fun() {
-            soundBgm.pause();
-            sessionStorage.bgmPlay = soundBgm.bgmPlay;
-            sessionStorage.bgmTime = soundBgm.bgmPlay ? soundBgm.currentTime + soundBgm.context.currentTime - soundBgm.startTime : soundBgm.currentTime;
-            location.href = '西湖大爷亭.html';
-        }
-    </script>
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -88,7 +62,7 @@
 
                 <p>八月十三日，你再次来到五山，我们恰了酸菜鱼，然后准备去珠江新城兜风。地铁站，下楼梯的时候你说你害怕下这么陡峭的楼梯（谁知道呢），我想非分之事此时不做更待何时！我就伸出了左手让你搭，没想到你直接五根手指插了进来，我很幸福，也很懵逼。珠江新城，我说我戴的隐形晚上看不见（这确实是），你心领神会，我们牵上了手，在繁华的CBD中自由穿梭。在海心桥，望着珠江，那晚周边的人出奇的少，我感觉这个时间点这些川流这些光景就是为我俩准备的，非分的想法冒了出来，但我又似乎不想打破这永恒的瞬间，于是我俩呆呆地发呆，那一刻好美。晚上我送你回去，在你宿舍楼下，用手捏着你的脸，然后忐忑迅速的亲了一下，观察你的反应，你皱眉笑着说我好烦。还好不用被抓进警察局~棋棋和庆庆的故事拉开了帷幕~</p>
                 <header id="backer">
-                    <a href="index.html" class="logo">back</a>
+                    <a href="庆棋一周年.html" class="logo">back</a>
                 </header>
             </section>
 
